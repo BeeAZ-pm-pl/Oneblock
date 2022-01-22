@@ -119,7 +119,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   //Main Form
   public function MenuForm(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new SimpleForm(function(Player $player, int $data = null){
       
       if($data === null){
@@ -172,7 +172,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function Top(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -196,7 +196,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function TpAnother(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -247,7 +247,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function ManageIslandForm(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new SimpleForm(function(Player $player, int $data = null){
       
       if($data === null){
@@ -339,7 +339,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function ListFriend(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -357,7 +357,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function addFriend(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -402,7 +402,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function removeFriend(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -447,7 +447,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function LockForm(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
@@ -486,7 +486,7 @@ class Oneblock extends PluginBase implements Listener {
   }
   
   public function LockPvpForm(Player $player){
-    $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+    
     $form = new CustomForm(function(Player $player, array $data = null){
       
       if($data === null){
