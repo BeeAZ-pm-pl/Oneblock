@@ -1,0 +1,32 @@
+# Adjust language
+# Copyright by lenlenlL6 and Dora
+
+
+
+
+
+WAITING_CREATE_ISLAND: "§aCreating an island, please wait a moment..."
+ALREADY_HAVE_ISLAND: "§cYou already have an island"
+CREATE_ISLAND_COMPLETE: "§aSuccessfully creates island"
+NO_ISLAND: "§cYou don't have any islands"
+BACK_ISLAND: "§aReturned to your island"
+TARGET_NOT_ISLAND: "§c{name} don't have any islands"
+ISLAND_LOCK: "§c{name}'s island is locked"
+NAME: "§cYou are not allowed to enter your name"
+TELEPORT_ISLAND: "§aTeleported to island {name}"
+DELETE_ISLAND: "§cSuccessfully deleted the island"
+ADD_FRIEND: "§aAdded {name} to friends list"
+REMOVE_FRIEND: "§aRemoved {name} from friends list"
+NOT_FRIEND_FOUND: "§c{name} not found in friends list"
+FRIEND_EXIST: "§c{name} already exists in your friends list"
+LOCK: "§aLocked island"
+UNLOCK: "§aUnlocked island"
+LOCK_PVP: "§aLocked pvp island"
+UNLOCK_PVP: "§aUnlock pvp island"
+SET_NEW_SPAWN: "§aNew spawn point created"
+
+#Cancel
+PVP: "§cThis island is locked pvp"
+BREAK: "§cYou can't do it here"
+PLACE: "§cYou can't do it here"
+INTERACT: "§cYou can't do it here"
