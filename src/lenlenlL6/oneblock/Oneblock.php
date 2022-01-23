@@ -183,7 +183,7 @@ class Oneblock extends PluginBase implements Listener {
     $txt = "";
     $all = $this->tier->getAll();
     arsort($all);
-    $all = array_splice($all, 0, 5);
+    $all = array_slice($all, 0, 5);
     $top = 1;
     foreach($all as $name => $tier){
       $txt .= "TOP $top belongs to $name WITH TIER IS $tier";
