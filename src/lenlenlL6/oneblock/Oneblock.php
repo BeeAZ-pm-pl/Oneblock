@@ -56,6 +56,11 @@ class Oneblock extends PluginBase implements Listener {
   public $prefix = "§r§l§a[§b• §eONE BLOCK §b•§a]";
   
   public $maxtier = 10;
+
+ public $island;
+public $level;
+public $lang;
+public $tier;
   
   
   
