@@ -34,6 +34,6 @@ class TierChangeEvent extends OneblockEvent{
   }
   
   public function getTier() : int{
-    return $this->main->getManager()->getTier($this->player);
+    return $this->main->getTier($this->player);
   }
 }
