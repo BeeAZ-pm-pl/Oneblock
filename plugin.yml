@@ -12,5 +12,5 @@ commands:
   
 permissions:
  oneblock.command:
-  description: Use Oneblock Command
+  description: Allow the player use oneblock commands
   default: true
