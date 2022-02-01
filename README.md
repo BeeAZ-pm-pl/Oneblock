@@ -2,7 +2,7 @@
 </a>
 ![alt text](https://play-lh.googleusercontent.com/RY0k-vbWIgnPYXU4XciUYaay6C_vvjUv85rf1bb0NrSLOHylIBNSCZkIkyiCRtCbT-A)
 # Oneblock-PM4
-###### Upgrade for Oneblock PM3 version
+###### This plugin helps you to create oneblock island (island has only 1 block) and manage it, delete island, add friends, remove friends and tier upgrade system
 ## Depends
 ###### MultiWorld -->[Download](https://poggit.pmmp.io/p/MultiWorld)
 
