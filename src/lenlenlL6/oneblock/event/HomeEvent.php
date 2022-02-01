@@ -24,6 +24,15 @@ use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\event\OneblockEvent;
 
 class HomeEvent extends OneblockEvent{
+
+  /** @var Oneblock $tier */
+  public Oneblock $main;
+
+  /** @var Player $player */
+  public Player $player;
+
+  /** @var Position $pos */
+  public Position $pos;
   
   public function __construct(Oneblock $main, Player $player, Position $pos){
     $this->main = $main;

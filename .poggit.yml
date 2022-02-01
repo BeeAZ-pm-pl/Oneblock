@@ -6,4 +6,9 @@ projects:
   Oneblock-PM4:
     path: ""
     icon: "icon.png"
+    libs:
+    - src: czechpmdevs\multiworld\MultiWorld
+      version: ^1.7.0-beta4
+    - src: jojoe77777\FormAPI\FormAPI
+      version: ^1.4.0-alpha
 ...
