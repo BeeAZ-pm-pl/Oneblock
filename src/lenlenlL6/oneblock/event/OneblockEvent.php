@@ -24,6 +24,9 @@ use pocketmine\event\plugin\PluginEvent;
 use lenlenlL6\oneblock\Oneblock;
 
 class OneblockEvent extends PluginEvent{
+
+  /** @var Oneblock $tier */
+  public Oneblock $main;
   
   public function __construct(Oneblock $main){
     $this->main = $main;

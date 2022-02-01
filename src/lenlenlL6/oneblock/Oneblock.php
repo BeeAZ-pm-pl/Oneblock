@@ -18,8 +18,7 @@ namespace lenlenlL6\oneblock;
 use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
+use pocketmine\command\{Command, CommandSender};
 use pocketmine\console\ConsoleCommandSender;
 use pocketmine\event\Listener;
 use pocketmine\world\World;
@@ -31,74 +30,49 @@ use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use lenlenlL6\oneblock\OneblockManager;
-use lenlenlL6\oneblock\event\CreateIslandEvent;
-use lenlenlL6\oneblock\event\DeleteIslandEvent;
-use lenlenlL6\oneblock\event\HomeEvent;
-use lenlenlL6\oneblock\event\AddFriendEvent;
-use lenlenlL6\oneblock\event\RemoveFriendEvent;
-use lenlenlL6\oneblock\event\TeleportEvent;
-use lenlenlL6\oneblock\event\TierChangeEvent;
+use lenlenlL6\oneblock\event\{CreateIslandEvent, DeleteIslandEvent, HomeEvent, AddFriendEvent, RemoveFriendEvent, TeleportEvent, TierChangeEvent};
 use lenlenlL6\oneblock\task\CreateIslandTask;
-use lenlenlL6\oneblock\task\tier\Tier1Task;
-use lenlenlL6\oneblock\task\tier\Tier2Task; 
-use lenlenlL6\oneblock\task\tier\Tier3Task;
-use lenlenlL6\oneblock\task\tier\Tier4Task;
-use lenlenlL6\oneblock\task\tier\Tier5Task; 
-use lenlenlL6\oneblock\task\tier\Tier6Task; 
-use lenlenlL6\oneblock\task\tier\Tier7Task; 
-use lenlenlL6\oneblock\task\tier\Tier8Task; 
-use lenlenlL6\oneblock\task\tier\Tier9Task; 
-use lenlenlL6\oneblock\task\tier\Tier10Task; 
-use jojoe77777\FormAPI\SimpleForm;
-use jojoe77777\FormAPI\CustomForm;
+use lenlenlL6\oneblock\task\tier\{Tier1Task, Tier2Task, Tier3Task, Tier4Task, Tier5Task, Tier6Task, Tier7Task, Tier8Task, Tier9Task, Tier10Task};
+use lenlenlL6\oneblock\libs\jojoe77777\FormAPI\SimpleForm;
+use lenlenlL6\oneblock\libs\jojoe77777\FormAPI\CustomForm;
+use czechpmdevs\multiworld\util\WorldUtils;
+use pocketmine\world\WorldCreationOptions;
+use czechpmdevs\multiworld\MultiWorld;
+
 class Oneblock extends PluginBase implements Listener {
   
   public $prefix = "§r§l§a[§b• §eONE BLOCK §b•§a]";
   
   public $maxtier = 10;
 
- public $island;
-public $level;
-public $lang;
-public $tier;
-  
-  
-  
-  const AUTHORS = "lenlenlL6 and DoraOtaku"; //DON'T CHANGE THIS
-  const VERSION = "0.0.2"; //DON'T CHANGE THIS
-  const API = "4.0.0"; //DON'T CHANGE THIS
+  /** @var Config $island */
+  public Config $island;
+
+  /** @var Config $level */
+  public Config $level;
+
+  /** @var Config $lang */
+  public Config $lang;
+
+  /** @var Config $tier */
+  public Config $tier;
   
   public function onEnable() : void{
-    $this->getLogger()->info("
-    ___             _     _            _    
-  / _ \ _ __   ___| |__ | | ___   ___| | __
- | | | | '_ \ / _ \ '_ \| |/ _ \ / __| |/ /
- | |_| | | | |  __/ |_) | | (_) | (__|   < 
-  \___/|_| |_|\___|_.__/|_|\___/ \___|_|\_\
-  ");
-  $this->getLogger()->info("Authors: " . self::AUTHORS);
-  $this->getLogger()->info("Plugin Version: " . self::VERSION);
-  $this->getLogger()->info("Plugin Api: " . self::API);
-  $this->getServer()->getPluginManager()->registerEvents($this, $this);
-  $this->saveResource("lang.yml");
-  $this->lang = new Config($this->getDataFolder() . "lang.yml", Config::YAML);
-  $this->tier = new Config($this->getDataFolder() . "tier.yml", Config::YAML);
-  $this->level = new Config($this->getDataFolder() . "level.yml", Config::YAML);
-  $this->island = new Config($this->getDataFolder() . "islands.yml", Config::YAML);
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    $this->saveResource("lang.yml");
+    $this->lang = new Config($this->getDataFolder() . "lang.yml", Config::YAML);
+    $this->tier = new Config($this->getDataFolder() . "tier.yml", Config::YAML);
+    $this->level = new Config($this->getDataFolder() . "level.yml", Config::YAML);
+    $this->island = new Config($this->getDataFolder() . "islands.yml", Config::YAML);
+    if(!class_exists(MultiWorld::class)){
+      $this->getServer()->getLogger()->info("\n\n§cOneBlock > Missing multiworld plugin.\n");
+      $this->getServer()->getPluginManager()->disablePlugin($this);
+      return;
+    }
   }
   
   public function onDisable() : void{
-    $this->getLogger()->info("
-    ___             _     _            _    
-  / _ \ _ __   ___| |__ | | ___   ___| | __
- | | | | '_ \ / _ \ '_ \| |/ _ \ / __| |/ /
- | |_| | | | |  __/ |_) | | (_) | (__|   < 
-  \___/|_| |_|\___|_.__/|_|\___/ \___|_|\_\
-  ");
-  $this->getLogger()->info("Authors: " . self::AUTHORS);
-  $this->getLogger()->info("Plugin Version: " . self::VERSION);
-  $this->getLogger()->info("Plugin Api: " . self::API);
-  $this->saveAll();
+	  $this->saveAll();
   }
   
   public function onJoin(PlayerJoinEvent $event){
@@ -133,7 +107,15 @@ public $tier;
       switch($data){
         case 0:
           if(!$this->isHaveIsland($player)){
-            $this->getServer()->dispatchCommand(new ConsoleCommandSender($this->getServer(), $this->getServer()->getLanguage()), "mw create oneblock-" . $player->getName() . " 0 VOID");
+            #$this->getServer()->dispatchCommand(new ConsoleCommandSender($this->getServer(), $this->getServer()->getLanguage()), "mw create oneblock-" . $player->getName() . " 0 void");
+            $levelname = "oneblock-".$player->getName();
+            $generator = WorldUtils::getGeneratorByName($generatorName = "void");
+            $plugin->getServer()->getWorldManager()->generateWorld(
+            name: $levelName,
+            options: WorldCreationOptions::create()
+            ->setSeed(0)
+            ->setGeneratorClass($generator->getGeneratorClass())
+            );
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".friends", $player->getName());
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".lock", false);
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".lockpvp", false);
@@ -686,9 +668,9 @@ public $tier;
   }
   
   public function saveAll() : void{
-$this->tier->save();
-$this->level->save();
-$this->island->save();
+	$this->tier->save();
+	$this->level->save();
+	$this->island->save();
   }
   
   public function getTier(Player $player) : int{

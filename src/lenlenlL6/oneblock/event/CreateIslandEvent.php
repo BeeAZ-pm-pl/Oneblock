@@ -23,6 +23,12 @@ use lenlenlL6\oneblock\event\OneblockEvent;
 use lenlenlL6\oneblock\Oneblock;
 
 class CreateIslandEvent extends OneblockEvent{
+
+  /** @var Oneblock $tier */
+  public Oneblock $main;
+
+  /** @var Player $player */
+  public Player $player;
   
   public function __construct(Oneblock $main, Player $player){
     $this->main = $main;

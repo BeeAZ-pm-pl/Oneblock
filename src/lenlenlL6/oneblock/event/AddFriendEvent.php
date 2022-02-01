@@ -23,6 +23,14 @@ use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\event\OneblockEvent;
 
 class AddFriendEvent extends OneblockEvent{
+
+  /** @var Oneblock $tier */
+  public Oneblock $main;
+
+  /** @var Player $player */
+  public Player $player;
+
+  public $target;
   
   public function __construct(Oneblock $main, Player $player, string $target){
     $this->main = $main;

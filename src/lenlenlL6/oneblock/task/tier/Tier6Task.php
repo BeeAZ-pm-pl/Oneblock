@@ -20,6 +20,11 @@ use pocketmine\scheduler\Task;
 use pocketmine\block\VanillaBlocks;
 
 class Tier6Task extends Task{
+
+  /** @var Oneblock $tier */
+  public Oneblock $main;
+
+  public $block;
   
   public function __construct(Oneblock $main, $block){
     $this->main = $main;

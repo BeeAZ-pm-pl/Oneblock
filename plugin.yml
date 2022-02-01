@@ -1,9 +1,9 @@
 name: Oneblock
 main: lenlenlL6\oneblock\Oneblock
-authors: [lenlenlL6, DoraOtaku]
+author: [lenlenlL6, DoraOtaku]
 api: 4.0.0
 version: 0.0.2
-depends: [FormAPI, MultiWorld]
+depends: [MultiWorld]
 
 commands:
  oneblock:
