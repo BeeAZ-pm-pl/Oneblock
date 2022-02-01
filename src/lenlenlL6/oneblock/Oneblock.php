@@ -522,7 +522,10 @@ class Oneblock extends PluginBase implements Listener {
         if($this->island->getNested("islands." . $worldp . ".lockpvp") === true){
           $event->cancel();
           $msg = $this->lang->get("PVP");
-          $event->getDamager()->sendMessage($this->prefix . " $msg");
+	  $damager = $event->getDamager();
+	  if($damager instanceof Player){
+          $damager->sendMessage($this->prefix . " $msg");
+	  }
         }
       }
     }
