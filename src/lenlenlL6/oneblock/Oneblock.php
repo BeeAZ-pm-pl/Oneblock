@@ -57,7 +57,7 @@ class Oneblock extends PluginBase implements Listener {
   /** @var Config $tier */
   public Config $tier;
 	
-  public $levelName;
+  public $levelname;
   
   public function onEnable() : void{
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -113,7 +113,7 @@ class Oneblock extends PluginBase implements Listener {
             $levelname = "oneblock-".$player->getName();
             $generator = WorldUtils::getGeneratorByName($generatorName = "void");
             $this->getServer()->getWorldManager()->generateWorld(
-            name: $levelName,
+            name: $levelname,
             options: WorldCreationOptions::create()
             ->setSeed(0)
             ->setGeneratorClass($generator->getGeneratorClass())
