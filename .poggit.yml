@@ -6,7 +6,4 @@ projects:
   Oneblock-PM4:
     path: ""
     icon: "icon.png"
-    libs:
-    - src: czechpmdevs\multiworld\MultiWorld
-      version: ^1.7.0-beta4
 ...
