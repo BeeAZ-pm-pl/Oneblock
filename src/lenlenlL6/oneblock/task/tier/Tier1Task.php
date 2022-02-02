@@ -17,7 +17,7 @@ namespace lenlenlL6\oneblock\task\tier;
 
 use lenlenlL6\oneblock\Oneblock;
 use pocketmine\scheduler\Task;
-use pocketmine\block\VanillaBlocks;
+use pocketmine\block\BlockFactory;
 
 class Tier1Task extends Task{
 
@@ -33,34 +33,12 @@ class Tier1Task extends Task{
   
   public function onRun() : void{
     $world = $this->block->getPosition()->getWorld();
-    switch(mt_rand(1, 15)){
-      case 1:
-        $world->setBlock($this->block->getPosition(), VanillaBlocks::OAK_LOG());
-        break;
-        
-        case 2:
-          $world->setBlock($this->block->getPosition(), VanillaBlocks::GRASS());
-          break;
-          
-          case 5:
-            $world->setBlock($this->block->getPosition(), VanillaBlocks::TNT());
-            break;
-            
-            case 9:
-              $world->setBlock($this->block->getPosition(), VanillaBlocks::DIAMOND_ORE());
-              break;
-              
-              case 12:
-                $world->setBlock($this->block->getPosition(), VanillaBlocks::IRON_ORE());
-                break;
-                
-                case 15:
-                  $world->setBlock($this->block->getPosition(), VanillaBlocks::PACKED_ICE());
-                  break;
-        
-        default:
-        $world->setBlock($this->block->getPosition(), VanillaBlocks::STONE());
-        break;
+    $array = [];
+    foreach($this->main->getConfig()->get("1") as $blocks){
+      $ex = explode(".", $blocks);
+      $array[] = BlockFactory::getInstance()->get($ex[0], $ex[1]);
     }
+      $rand = array_rand($array);
+      $world->setBlock($this->block->getPosition(), $array[$rand]);
   }
 }
