@@ -62,6 +62,7 @@ class Oneblock extends PluginBase implements Listener {
   public function onEnable() : void{
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->saveResource("lang.yml");
+    $this->saveDefaultConfig();
     $this->lang = new Config($this->getDataFolder() . "lang.yml", Config::YAML);
     $this->tier = new Config($this->getDataFolder() . "tier.yml", Config::YAML);
     $this->level = new Config($this->getDataFolder() . "level.yml", Config::YAML);
