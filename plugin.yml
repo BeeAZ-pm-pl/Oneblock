@@ -6,11 +6,11 @@ version: 0.0.4
 depends: [MultiWorld]
 
 commands:
- oneblock:
-  description: Oneblock Commands
-  permission: oneblock.command
-  
+  oneblock:
+    description: Oneblock Commands
+    permission: oneblock.command
+
 permissions:
- oneblock.command:
-  description: Allow the player use oneblock commands
-  default: true
+  oneblock.command:
+    description: Allow the player use oneblock commands
+    default: true

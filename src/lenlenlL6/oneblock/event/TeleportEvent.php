@@ -14,7 +14,7 @@ ___             _     _            _
  
  
  Called when the player teleports to another island.
-*/ 
+*/
 
 namespace lenlenlL6\oneblock\event;
 
@@ -23,28 +23,28 @@ use pocketmine\world\Position;
 use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\event\OneblockEvent;
 
-class TeleportEvent extends OneblockEvent{
+class TeleportEvent extends OneblockEvent {
 
-  /** @var Oneblock $tier */
-  public Oneblock $main;
+	/** @var Oneblock $tier */
+	public Oneblock $main;
 
-  /** @var Player $player */
-  public Player $player;
+	/** @var Player $player */
+	public Player $player;
 
-  /** @var Position $pos */
-  public Position $pos;
-  
-  public function __construct(Oneblock $main, Player $player, Position $pos){
-    $this->main = $main;
-    $this->player = $player;
-    $this->pos = $pos;
-  }
-  
-  public function getPlayer() : Player{
-    return $this->player;
-  }
-  
-  public function getPosition() : Position{
-    return $this->pos;
-  }
+	/** @var Position $pos */
+	public Position $pos;
+
+	public function __construct(Oneblock $main, Player $player, Position $pos) {
+		$this->main = $main;
+		$this->player = $player;
+		$this->pos = $pos;
+	}
+
+	public function getPlayer(): Player {
+		return $this->player;
+	}
+
+	public function getPosition(): Position {
+		return $this->pos;
+	}
 }

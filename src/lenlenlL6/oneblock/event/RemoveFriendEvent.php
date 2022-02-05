@@ -14,7 +14,7 @@ ___             _     _            _
  
  
  Called when the player remove friend
-*/ 
+*/
 
 namespace lenlenlL6\oneblock\event;
 
@@ -22,27 +22,27 @@ use pocketmine\player\Player;
 use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\event\OneblockEvent;
 
-class RemoveFriendEvent extends OneblockEvent{
+class RemoveFriendEvent extends OneblockEvent {
 
-  /** @var Oneblock $tier */
-  public Oneblock $main;
+	/** @var Oneblock $tier */
+	public Oneblock $main;
 
-  /** @var Player $player */
-  public Player $player;
+	/** @var Player $player */
+	public Player $player;
 
-  public $target;
-  
-  public function __construct(Oneblock $main, Player $player, string $target){
-    $this->main = $main;
-    $this->player = $player;
-    $this->target = $target;
-  }
-  
-  public function getPlayer() : Player{
-    return $this->player;
-  }
-  
-  public function getTarget() : string{
-    return $this->target;
-  }
-} 
+	public $target;
+
+	public function __construct(Oneblock $main, Player $player, string $target) {
+		$this->main = $main;
+		$this->player = $player;
+		$this->target = $target;
+	}
+
+	public function getPlayer(): Player {
+		return $this->player;
+	}
+
+	public function getTarget(): string {
+		return $this->target;
+	}
+}

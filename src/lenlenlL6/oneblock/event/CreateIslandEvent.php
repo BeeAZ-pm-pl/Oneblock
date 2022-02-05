@@ -14,7 +14,7 @@ ___             _     _            _
  
  
  Called when the player create an island
-*/ 
+*/
 
 namespace lenlenlL6\oneblock\event;
 
@@ -22,24 +22,24 @@ use pocketmine\player\Player;
 use lenlenlL6\oneblock\event\OneblockEvent;
 use lenlenlL6\oneblock\Oneblock;
 
-class CreateIslandEvent extends OneblockEvent{
+class CreateIslandEvent extends OneblockEvent {
 
-  /** @var Oneblock $tier */
-  public Oneblock $main;
+	/** @var Oneblock $tier */
+	public Oneblock $main;
 
-  /** @var Player $player */
-  public Player $player;
-  
-  public function __construct(Oneblock $main, Player $player){
-    $this->main = $main;
-    $this->player = $player; //Player create an island
-  }
-  
-  public function getPlayer() : Player{
-   return $this->player;
-  }
-  
- public function getNameIsland() : string{
-   return "oneblock-" . $this->player->getName();
- }
+	/** @var Player $player */
+	public Player $player;
+
+	public function __construct(Oneblock $main, Player $player) {
+		$this->main = $main;
+		$this->player = $player; //Player create an island
+	}
+
+	public function getPlayer(): Player {
+		return $this->player;
+	}
+
+	public function getNameIsland(): string {
+		return "oneblock-" . $this->player->getName();
+	}
 }

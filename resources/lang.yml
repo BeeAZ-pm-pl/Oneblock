@@ -1,10 +1,6 @@
 # Adjust language
 # Copyright by lenlenlL6 and Dora
 
-
-
-
-
 WAITING_CREATE_ISLAND: "§aCreating an island, please wait a moment..."
 ALREADY_HAVE_ISLAND: "§cYou already have an island"
 CREATE_ISLAND_COMPLETE: "§aSuccessfully creates island"

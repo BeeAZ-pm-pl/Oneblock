@@ -14,7 +14,7 @@ ___             _     _            _
  
  
  Called when the player delete their island.
-*/ 
+*/
 
 namespace lenlenlL6\oneblock\event;
 
@@ -22,24 +22,24 @@ use pocketmine\player\Player;
 use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\event\OneblockEvent;
 
-class DeleteIslandEvent extends OneblockEvent{
+class DeleteIslandEvent extends OneblockEvent {
 
-  /** @var Oneblock $tier */
-  public Oneblock $main;
+	/** @var Oneblock $tier */
+	public Oneblock $main;
 
-  /** @var Player $player */
-  public Player $player;
-  
-  public function __construct(Oneblock $main, Player $player){
-    $this->main = $main;
-    $this->player = $player;
-  }
-  
-  public function getPlayer() : Player{
-    return $this->player;
-  }
-  
-  public function getNameIsland() : string{
-    return "oneblock-" . $this->player->getName();
-  }
+	/** @var Player $player */
+	public Player $player;
+
+	public function __construct(Oneblock $main, Player $player) {
+		$this->main = $main;
+		$this->player = $player;
+	}
+
+	public function getPlayer(): Player {
+		return $this->player;
+	}
+
+	public function getNameIsland(): string {
+		return "oneblock-" . $this->player->getName();
+	}
 }
