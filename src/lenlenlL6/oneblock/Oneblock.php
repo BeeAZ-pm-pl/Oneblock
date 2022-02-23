@@ -85,6 +85,7 @@ class Oneblock extends PluginBase implements Listener {
       $this->level->set($player->getName(), 0);
       $this->saveAll();
     }
+   (new TierChangeEvent($this, $player))->call();
   }
   
   public function onCommand(CommandSender $player, Command $cmd, String $label, array $args): bool{
