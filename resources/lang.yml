@@ -1,3 +1,4 @@
+---
 # Adjust language
 # Copyright by lenlenlL6 and Dora
 
@@ -30,3 +31,4 @@ PVP: "§cThis island is locked pvp"
 BREAK: "§cYou can't do it here"
 PLACE: "§cYou can't do it here"
 INTERACT: "§cYou can't do it here"
+...
