@@ -6,4 +6,5 @@ projects:
   Oneblock-PM4:
     path: ""
     icon: "icon.png"
+    lint: false
 ...
