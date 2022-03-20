@@ -254,8 +254,8 @@ class Oneblock extends PluginBase implements Listener {
             $y = ((int)$ex[1]);
             $z = ((int)$ex[2]);
             $lv = $ex[3];
-            $this->getServer()->getWorldManager()->loadWorld($lv);
             $world = $this->getServer()->getWorldManager()->getWorldByName($lv);
+            $this->getServer()->getWorldManager()->loadWorld($world);
             $player->teleport(new Position($x, $y, $z, $world));
             $msg = $this->lang->get("BACK_ISLAND");
             $player->sendMessage($this->prefix . " $msg");
