@@ -218,7 +218,7 @@ class Oneblock extends PluginBase implements Listener {
         $msg = $this->lang->get("TELEPORT_ISLAND");
         $change = str_replace("{name}", $data[0], $msg);
         $player->sendMessage($this->prefix . " $change");
-        $pos = new Position($x, $y, $z, $world);
+        $pos = new Position(floatval($x), floatval($y), floatval($z), $world);
         (new TeleportEvent($this, $player, $pos))->call();
         }else{
           $msg = $this->lang->get("ISLAND_LOCK");
