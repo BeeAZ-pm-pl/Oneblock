@@ -8,6 +8,7 @@ depends: [MultiWorld]
 commands:
  oneblock:
   description: Oneblock Commands
+  aliases: ["ob", "is"]
   permission: oneblock.command
   
 permissions:
