@@ -125,7 +125,7 @@ class Oneblock extends PluginBase implements Listener {
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".lockpvp", false);
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".spawn", "256 65 256 oneblock-" . $player->getName());
             $this->island->save();
-            $this->getScheduler()->scheduleDelayedTask(new CreateIslandTask($this, $player), 5*20);
+            $this->getScheduler()->scheduleDelayedTask(new CreateIslandTask($this, $player), 4.5*20);
             $msg = $this->lang->get("WAITING_CREATE_ISLAND");
             $player->sendMessage($this->prefix . " $msg");
             (new CreateIslandEvent($this, $player))->call();
@@ -254,6 +254,9 @@ class Oneblock extends PluginBase implements Listener {
             $y = ((int)$ex[1]);
             $z = ((int)$ex[2]);
             $lv = $ex[3];
+            if(!$this->getServer()->getWorldManager()->isWorldGenerated($lv)){
+            return;
+            }
             $this->getServer()->getWorldManager()->loadWorld($lv);
             $world = $this->getServer()->getWorldManager()->getWorldByName($lv);
             $player->teleport(new Position(floatval($x), floatval($y), floatval($z), $world));
