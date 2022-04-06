@@ -259,11 +259,16 @@ class Oneblock extends PluginBase implements Listener {
             }
             $this->getServer()->getWorldManager()->loadWorld($lv);
             $world = $this->getServer()->getWorldManager()->getWorldByName($lv);
+            if($world->isLoaded()){
             $player->teleport(new Position(floatval($x), floatval($y), floatval($z), $world));
             $msg = $this->lang->get("BACK_ISLAND");
             $player->sendMessage($this->prefix . " $msg");
             $pos = new Position(floatval($x), floatval($y), floatval($z), $world);
             (new HomeEvent($this, $player, $pos))->call();
+            }else{
+            $msg = $this->lang->get("ISLAND_NOT_LOADED");
+            $player->sendMessage($this->prefix . " $msg");
+            }
           }else{
             $msg = $this->lang->get("NO_ISLAND");
             $player->sendMessage($this->prefix . " $msg");
