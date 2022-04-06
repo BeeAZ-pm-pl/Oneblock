@@ -25,6 +25,7 @@ UNLOCK: "§aUnlocked island"
 LOCK_PVP: "§aLocked pvp island"
 UNLOCK_PVP: "§aUnlock pvp island"
 SET_NEW_SPAWN: "§aNew spawn point created"
+ISLAND_NOT_LOADED: "§cIsland not loaded, try again later"
 
 #Cancel
 PVP: "§cThis island is locked pvp"
