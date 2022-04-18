@@ -7,6 +7,9 @@
 # OneBlock
 Oneblock is an island survival plugin for pocketmine-mp. with the same appearance as skyblock but the features are much more interesting.
 
+
+[![Discord](https://img.shields.io/discord/965662639168569394.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/34PC5u9W)
+
 # Installation and Support
 Installing this plugin on your server is super easy to do! Just download the OneBlock.phar file from poggit and plop it into your server's plugins folder then start the server.
 
