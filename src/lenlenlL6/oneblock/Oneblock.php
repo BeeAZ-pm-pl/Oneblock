@@ -177,7 +177,7 @@ class Oneblock extends PluginBase implements Listener {
     $all = array_slice($all, 0, 5);
     $top = 1;
     foreach($all as $name => $tier){
-      $txt .= "TOP $top belongs to $name WITH TIER IS $tier";
+      $txt .= "TOP $top belongs to $name WITH TIER IS $tier\n";
       $top++;
     }
     $form->setTitle("§l§e• §bTOP TIER §e•");
