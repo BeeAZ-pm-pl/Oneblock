@@ -123,7 +123,7 @@ class Oneblock extends PluginBase implements Listener {
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".friends", $player->getName());
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".lock", false);
             $this->island->setNested("islands.oneblock-" . $player->getName() . ".lockpvp", false);
-            $this->island->setNested("islands.oneblock-" . $player->getName() . ".spawn", "256 65 256 oneblock-" . $player->getName());
+            $this->island->setNested("islands.oneblock-" . $player->getName() . ".spawn", "256 66 256 oneblock-" . $player->getName());
             $this->island->save();
             $this->getScheduler()->scheduleDelayedTask(new CreateIslandTask($this, $player), 4.5*20);
             $msg = $this->lang->get("WAITING_CREATE_ISLAND");
