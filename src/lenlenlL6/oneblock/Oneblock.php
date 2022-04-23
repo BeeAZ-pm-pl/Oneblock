@@ -373,6 +373,12 @@ class Oneblock extends PluginBase implements Listener {
         $player->sendMessage($this->prefix . " $msg");
         return true;
       }
+      if($this->getServer()->getPlayerByPrefix($data[0]) === null){
+      $msg = $this->lang->get("NOT_ONLINE");
+      $msg = str_replace("{player}", $data[0], $msg);
+      $player->sendMessage($this->prefix . " $msg");
+      return false;
+      }
       if($this->isHaveIsland($player)){
       $ex = explode(", ", $this->island->getNested("islands.oneblock-" . $player->getName() . ".friends"));
       if(!in_array($data[0], $ex)){
