@@ -6,11 +6,11 @@ ___             _     _            _
  | |_| | | | |  __/ |_) | | (_) | (__|   < 
   \___/|_| |_|\___|_.__/|_|\___/ \___|_|\_\
  
- ((/)) An upgrade of oneblock pm3 made by lenlenlL6 and Dora.
+ ((/)) An upgrade of oneblock pm3 made by lenlenlL6 , Dora , BeeAZ-pm-pl.
  ((/)) If you have problems with the plugin, contact me.
  ---> Facebook: https://www.facebook.com/profile.php?id=100071316150096
  ---> Github: https://github.com/lenlenlL6
- ((/)) Copyright by lenlenlL6 and Dora.
+ ((/)) Copyright by lenlenlL6 , Dora, BeeAZ-pm-pl.
 */
 
 namespace lenlenlL6\oneblock;
@@ -177,7 +177,7 @@ class Oneblock extends PluginBase implements Listener {
     $all = array_slice($all, 0, 5);
     $top = 1;
     foreach($all as $name => $tier){
-      $txt .= "TOP $top belongs to $name WITH TIER IS $tier\n";
+      $txt .= "§b§lTOP {$top}.§e§l{$name} §cWith Tier §d{$tier}\n";
       $top++;
     }
     $form->setTitle("§l§e• §bTOP TIER §e•");
@@ -232,7 +232,7 @@ class Oneblock extends PluginBase implements Listener {
       }
     });
     $form->setTitle("§l§e• §bISLAND TELEPORT §e•");
-    $form->addInput("§cEnter the name of the person you want to teleport:");
+    $form->addInput("§c§l☞ Enter the name of the person you want to teleport:");
     $form->sendToPlayer($player);
     return $form;
   }
@@ -325,14 +325,13 @@ class Oneblock extends PluginBase implements Listener {
       }
     });
     $form->setTitle("§l§e• §bMANAGE YOUR ISLAND §e•");
-    $form->addButton("§l§a• TELEPORT TO YOUR ISLAND •", 1, "https://w7.pngwing.com/pngs/336/478/png-transparent-computer-icons-house-house-angle-building-black.png");
-    
-    $form->addButton("§l§a• ADD FRIEND •", 1, "https://png.pngtree.com/png-clipart/20190614/original/pngtree-add-vector-icon-png-image_3791307.jpg");
-    $form->addButton("§l§a• REMOVE FRIEND •", 1, "https://img.favpng.com/0/6/22/subtraction-plus-and-minus-signs-button-computer-icons-png-favpng-FLpZhrq8S9cXq5Ms1zVp41PPx.jpg");
-    $form->addButton("§l§a• LOCK/UNLOCK ISLAND •", 1, "https://w7.pngwing.com/pngs/485/864/png-transparent-padlock-s-locked-files-website-pin-tumbler-lock-padlock.png");
-    $form->addButton("§l§a• LOCK/UNLOCK PVP •", 1, "https://www.pinclipart.com/picdir/middle/168-1688988_open-two-swords-crossed-png-clipart.png");
-    $form->addButton("§l§a• SET NEW SPAWN •", 1, "https://img.favpng.com/19/14/16/map-symbolization-mountain-pass-pictogram-png-favpng-Lw01c0uWMuFVkMBK9LTFDRmmc.jpg");
-    $form->addButton("§l§a• DELETE ISLAND •", 1, "https://png.pngtree.com/element_our/20190528/ourmid/pngtree-delete-icon-image_1129289.jpg");
+    $form->addButton("§l§a• TELEPORT TO YOUR ISLAND •");
+    $form->addButton("§l• ADD FRIEND •");
+    $form->addButton("§l• REMOVE FRIEND •");
+    $form->addButton("§l• LOCK/UNLOCK ISLAND •");
+    $form->addButton("§l• LOCK/UNLOCK PVP •");
+    $form->addButton("§l• SET NEW SPAWN •");
+    $form->addButton("§l• DELETE ISLAND •");
     $form->sendToPlayer($player);
     return $form;
   }
