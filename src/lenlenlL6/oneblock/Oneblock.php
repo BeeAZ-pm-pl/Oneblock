@@ -154,10 +154,10 @@ class Oneblock extends PluginBase implements Listener {
       }
     });
     $form->setTitle("§l§a【 §bONE BLOCK MENU §a】");
-    $form->addButton("§l§a• CREATE ISLAND •", 1, "https://www.vhv.rs/dpng/d/453-4533087_how-to-create-png-images-create-icon-transparent.png");
-    $form->addButton("§l§a• MANAGE YOUR ISLAND •", 1, "https://png.pngtree.com/png-clipart/20190619/original/pngtree-file-manager-glyph-black-icon-png-image_4008309.jpg");
-    $form->addButton("§l§a• TELEPORT TO ANOTHER ISLAND •", 1, "https://www.clipartmax.com/png/middle/169-1690744_address-1-visit-icon.png");
-    $form->addButton("§l§a• TOP TIER •", 1, "https://toppng.com/uploads/preview/top-with-upwards-arrow-11523878763m2mn4hdnyd.png");
+    $form->addButton("§l• CREATE ISLAND •");
+    $form->addButton("§l• MANAGE YOUR ISLAND •");
+    $form->addButton("§l• TELEPORT TO ANOTHER ISLAND •");
+    $form->addButton("§l• TOP TIER •");
     $form->sendToPlayer($player);
     return $form;
   }
