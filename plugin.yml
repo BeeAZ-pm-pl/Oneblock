@@ -7,6 +7,7 @@ authors:
  - DoraOtaku
 api: 4.0.0
 version: 0.0.9
+mcpe-protocol: 503
 depends: [MultiWorld]
 
 commands:
