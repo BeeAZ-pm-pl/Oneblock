@@ -42,6 +42,7 @@ class CreateIslandTask extends Task{
   public function onRun() : void{
     $this->main->getServer()->getWorldManager()->loadWorld("oneblock-" . $this->player->getName());
     $world = $this->main->getServer()->getWorldManager()->getWorldByName("oneblock-" . $this->player->getName());
+    $world->setBlock(new Position(256, 63, 256, $world), VanillaBlocks::BEDROCK());
     $world->setBlock(new Position(256, 65, 256, $world), VanillaBlocks::CHEST());
     $tile = $world->getTile(new Position(256, 65, 256, $world));
     foreach($this->main->getConfig()->get("items") as $items){
