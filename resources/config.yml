@@ -1,109 +1,29 @@
-# You can customize the blocks that can appear in the tiers here. 
-# Format: id.meta
-# The block list can be viewed at: https://www.digminecraft.com/lists/item_id_list_pe.php
-
-1: #Tier 1
-- "1.0"
-- "2.0"
-2:
-- "4.0"
-- "17.0"
-- "17.1"
-- "17.3"
-- "162.1"
-- "17.2"
-- "56.0"
-3:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0"
-4:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0"
-5:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0"
-6:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0"
-7:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0"
-8:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0" 
-9:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0" 
-10:
-- "4.0"
-- "16.0"
-- "56.0"
-- "56.0" # Help rate out more
-- "21.0"
-- "73.0"
-- "15.0"
-- "14.0"
-- "1.0"
-- "129.0" 
-
-# Chest Items
-items: #id.meta.count
-- "364.0.5"
-- "278.0.1"
-- "50.0.1"
+---
+tier:
+ 1:
+  "4:0": 50 #"id.meta": probability
+  "21:0": 50
+  
+lang:
+ WAITING_CREATE_ISLAND: "§aCreating an island, please wait a moment..."
+ ALREADY_HAVE_ISLAND: "§cYou already have an island"
+ CREATE_ISLAND_COMPLETE: "§aSuccessfully creates island"
+ NO_ISLAND: "§cYou don't have any islands"
+ BACK_ISLAND: "§aReturned to your island"
+ WORLD_IS_WRONG: "§c The world you're in doesn't fit" # Occurs when the player resets the respawn location to the wrong world.
+ SET_NEW_RESPAWN_LOCATION: "§aNew respawn location created"
+ DELETE_ISLAND: "§aSuccessfully deleted the island"
+ ACCEPT_INVITATION: "§aYou have accepted {name}'s invitation"
+ DECLINE_THE_INVITATION: "§aYou declined {name}'s invitation"
+ FRIENDS_WITHOUT_ISLAND: "§cThis friend of yours doesn't have an island"
+ TELEPORT_TO_FRIEND_ISLAND: "§aTeleported to {name}'s island"
+ PLAYER_DOES_NOT_EXIST: "§cPlayer {name} is no longer online"
+ TOO_MUCH_INVITATIONS: "§cPlayer {name} has too many invitations"
+ THE_INVITATION_EXISTS: "§cYou have already sent an invitation to {name}"
+ FRIEND_ALREADY_EXIST: "§cYou are already {name}'s friend"
+ COMPLETED_SEND_INVITATIONS: "§aInvitation sent to {name}"
+ DELETE_FRIENDS: "§aRemoved {name} from friends list"
+ DO_NOT_HAVE_PERMISSION: "§cYou can't do this here"
+ MAXIMUM_TIER: "§cYou have reached the limit of tier"
+ UP_TIER: "§aYou have leveled up to tier {tier}"
+...
