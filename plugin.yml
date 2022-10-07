@@ -1,22 +1,11 @@
 name: Oneblock
 main: lenlenlL6\oneblock\Oneblock
-author:
- - lenlenlL6
- - BeeAZ
-authors:
- - DoraOtaku
+author: [lenlenlL6, BeeAZ]
 api: 4.0.0
-version: 0.0.9
-mcpe-protocol: 503
-depends: [MultiWorld]
+version: 0.1.0
+depend: [MultiWorld, FormAPI]
 
-commands:
- oneblock:
-  description: Oneblock Commands
-  aliases: ["ob", "is"]
-  permission: oneblock.command
-  
 permissions:
- oneblock.command:
+ oneblock.command.oneblock:
   description: Allow the player use oneblock commands
   default: true
