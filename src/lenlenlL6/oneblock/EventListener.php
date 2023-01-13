@@ -19,7 +19,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
-use pocketmine\block\BlockFactory;
+use pocketmine\item\LegacyStringToItemParser;
 use lenlenlL6\oneblock\Oneblock;
 use lenlenlL6\oneblock\task\SetBlockTask;
 use lenlenlL6\oneblock\event\TierChangedEvent;
@@ -72,7 +72,7 @@ final class EventListener implements Listener{
           $prob[] = $rand;
         }
         $blockC = explode(":", $prob[array_rand($prob)]);
-        Oneblock::$plugin->getScheduler()->scheduleDelayedTask(new SetBlockTask($event->getBlock()->getPosition(), BlockFactory::getInstance()->get((int)$blockC[0], (int)$blockC[1])), 5);
+        Oneblock::$plugin->getScheduler()->scheduleDelayedTask(new SetBlockTask($event->getBlock()->getPosition(), LegacyStringToItemParser::getInstance()->parse((int)$blockC[0].':'.(int)$blockC[1])->getBlock()), 5);
       }
     }
   }
