@@ -3,7 +3,7 @@ main: lenlenlL6\oneblock\Oneblock
 author: [lenlenlL6, BeeAZ]
 api: 4.0.0
 version: 0.1.0
-depend: [MultiWorld, FormAPI]
+depend: [MultiWorld]
 
 permissions:
  oneblock.command.oneblock:
