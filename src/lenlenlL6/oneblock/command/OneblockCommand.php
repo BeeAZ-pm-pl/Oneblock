@@ -28,8 +28,11 @@ use lenlenlL6\oneblock\task\CreateAnIslandTask;
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\CustomForm;
 use czechpmdevs\multiworld\generator\void\VoidGenerator;
+use pocketmine\plugin\PluginOwned;
 
-final class OneblockCommand extends Command{
+final class OneblockCommand extends Command implements PluginOwned{
+  
+  public $plugin;
   
   public function __construct(){
     parent::__construct("oneblock", "Open Oneblock's preferences", null, ["oneblock", "ob"]);
@@ -45,6 +48,12 @@ final class OneblockCommand extends Command{
       $player->sendMessage("Please use this command in game");
     }
   }
+  
+  public function getOwningPlugin() : OneBlock {
+
+		return $this->plugin;
+
+	}
   
   private function mainForm(Player $player){
     $form = new SimpleForm(function(Player $player, ?int $data = null){
